@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio | Noticias SA Nacional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="banner">
+      <div class="logo-area">
+        <div class="logo">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="26" fill="#B91C1C"/>
+            <text x="26" y="33" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="white">N</text>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">Noticias SA</span>
+            <span class="logo-sub">NACIONAL</span>
+          </div>
+        </div>
+        <p class="tagline">Tu fuente de información, hoy y siempre.</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html" class="active">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="section-heading">Noticias Nacionales</h2>
+    <p id="fecha-actual" class="info-line"></p>
+
+    <article class="noticia">
+      <h3 class="noticia-titulo">Inauguración del nuevo Hospital Central en Ciudad de Panamá</h3>
+      <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=700&q=80" alt="Hospital Central de Panamá" class="noticia-img" />
+      <p class="noticia-texto truncado">
+        El Ministerio de Salud anunció hoy la inauguración oficial del nuevo Hospital Central de Ciudad de Panamá, una obra de gran envergadura que beneficiará a miles de pacientes en la región metropolitana. La moderna instalación cuenta con más de 400 camas, tecnología de punta en diagnóstico por imagen y un ala especial dedicada a atención pediátrica. Autoridades locales y representantes del sector médico celebraron el acontecimiento como un hito histórico para el sistema de salud panameño.
+      </p>
+      <button class="btn-leer" onclick="toggleLeer(this)">Leer más...</button>
+    </article>
+
+    <article class="noticia">
+      <h3 class="noticia-titulo">Gobierno lanza programa de becas universitarias para jóvenes de bajos recursos</h3>
+      <img src="https://images.unsplash.com/photo-1661693758705-4fa65572bced?w=700&q=80" alt="Estudiantes universitarios" class="noticia-img" />
+      <p class="noticia-texto truncado">
+        El Ministerio de Educación presentó este martes el nuevo programa "Panamá Educa", que ofrecerá más de cinco mil becas universitarias a jóvenes panameños de escasos recursos económicos. El plan contempla cubrir matrícula, materiales y una mensualidad para gastos de transporte. Los interesados podrán inscribirse a partir del próximo mes a través del portal oficial del Ministerio. Las autoridades destacaron que la inversión en educación superior es clave para el desarrollo sostenible del país.
+      </p>
+      <button class="btn-leer" onclick="toggleLeer(this)">Leer más...</button>
+    </article>
+
+    <article class="noticia">
+      <h3 class="noticia-titulo">Canal de Panamá registra cifra récord de tránsito de buques en el primer trimestre</h3>
+      <img src="https://images.unsplash.com/photo-1569513586164-80529357ad6f?w=700&q=80" alt="Canal de Panamá" class="noticia-img" />
+      <p class="noticia-texto truncado">
+        La Autoridad del Canal de Panamá (ACP) informó que durante el primer trimestre del año se registró un nuevo récord en el tránsito de embarcaciones, con un total de 4,200 naves que cruzaron la vía interoceánica. Este resultado supera en un 12% las cifras del mismo período del año anterior. Los funcionarios atribuyen el incremento a la recuperación del comercio global y a la ampliación de las esclusas, que permite el paso de buques neopanamax de mayor tonelaje y capacidad de carga.
+      </p>
+      <button class="btn-leer" onclick="toggleLeer(this)">Leer más...</button>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-label">Otras secciones</p>
+      <ul class="footer-nav">
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Noticias SA Nacional. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="btn-top" onclick="irArriba()">&#8593; Arriba</button>
+
+  <script>
+    function mostrarFecha() {
+      var hoy = new Date();
+      var opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("fecha-actual").textContent = hoy.toLocaleDateString('es-ES', opciones);
+    }
+
+    function toggleLeer(btn) {
+      var texto = btn.previousElementSibling;
+      if (texto.classList.contains("truncado")) {
+        texto.classList.remove("truncado");
+        btn.textContent = "Leer menos";
+      } else {
+        texto.classList.add("truncado");
+        btn.textContent = "Leer más...";
+      }
+    }
+
+    function irArriba() {
+      window.scrollTo(0, 0);
+    }
+
+    window.onscroll = function() {
+      var btn = document.getElementById("btn-top");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    window.onload = mostrarFecha;
+  </script>
+
+</body>
+</html>

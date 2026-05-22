@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deportivas | Noticias SA Nacional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-deportivas">
+
+  <header class="site-header">
+    <div class="banner">
+      <div class="logo-area">
+        <div class="logo">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="26" fill="#B91C1C"/>
+            <text x="26" y="33" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="white">N</text>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">Noticias SA</span>
+            <span class="logo-sub">NACIONAL</span>
+          </div>
+        </div>
+        <p class="tagline">Tu fuente de información, hoy y siempre.</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html" class="active">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="section-heading">Mejores Jugadas Deportivas</h2>
+    <p id="contador" class="info-line"></p>
+
+    <div class="videos-grid">
+
+      
+      <article class="video-card">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/8BC1Qv5eUPo?rel=0"
+            title="Copa América 2024: Top 10 Goles del Torneo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <span class="video-badge">Fútbol</span>
+          <h3 class="video-titulo">Copa América 2024: Los 10 mejores goles del torneo</h3>
+          <p class="video-desc">
+            Revive los goles más espectaculares de la Copa América 2024, con actuaciones memorables de Lionel Messi, Lautaro Martínez y otras estrellas del continente. Una selección de los mejores momentos del torneo que coronó a Argentina campeona.
+          </p>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/xoKJxSEIu3c?rel=0"
+            title="NBA Playoffs 2025: Celtics vs Magic"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <span class="video-badge">Baloncesto</span>
+          <h3 class="video-titulo">NBA Playoffs 2025: Boston Celtics vs Orlando Magic</h3>
+          <p class="video-desc">
+            Highlights del Juego 1 de los Playoffs de la NBA 2025 entre los Boston Celtics y los Orlando Magic. Mates explosivos, triples decisivos y jugadas de alto nivel que definieron el inicio de la serie de playoffs.
+          </p>
+        </div>
+      </article>
+
+      
+      <article class="video-card">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/BTagozOQ7BU?rel=0"
+            title="UFC 300: HOLLOWAY VS GAETHJE — Resumen Completo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <span class="video-badge">MMA</span>
+          <h3 class="video-titulo">UFC 300: HOLLOWAY VS GAETHJE — Resumen Completo</h3>
+          <p class="video-desc">
+            Revive los momentos más emocionantes del combate entre Max Holloway y Justin Gaethje en el UFC 300. Un encuentro épico lleno de giros y caídas que definió el futuro de ambos luchadores.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-label">Otras secciones</p>
+      <ul class="footer-nav">
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Noticias SA Nacional. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="btn-top" onclick="irArriba()">&#8593; Arriba</button>
+
+  <script>
+    function irArriba() {
+      window.scrollTo(0, 0);
+    }
+
+    window.onscroll = function() {
+      var btn = document.getElementById("btn-top");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    window.onload = function() {
+      var videos = document.querySelectorAll(".video-card");
+      document.getElementById("contador").textContent = videos.length + " videos disponibles";
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contáctanos | Noticias SA Nacional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- EmailJS SDK — permite enviar correos desde JavaScript sin servidor -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Reemplaza "TU_PUBLIC_KEY" con tu Public Key de EmailJS
+    emailjs.init("wGrBzh5RZBrMWzGJJ");
+  </script>
+</head>
+<body class="page-contactanos">
+
+  <header class="site-header">
+    <div class="banner">
+      <div class="logo-area">
+        <div class="logo">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="26" fill="#B91C1C"/>
+            <text x="26" y="33" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="white">N</text>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">Noticias SA</span>
+            <span class="logo-sub">NACIONAL</span>
+          </div>
+        </div>
+        <p class="tagline">Tu fuente de información, hoy y siempre.</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html" class="active">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="section-heading">Nuestro Equipo</h2>
+
+    <div class="equipo-grid">
+
+      <article class="miembro-card">
+   
+        <img
+          src="fotos/virgilio.jpg"
+          alt="Foto de Virgilio Peff"
+          class="miembro-foto"
+        />
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Virgilio Peff</h3>
+          <div class="divider"></div>
+          <p class="miembro-desc">
+            Estudiante de Ingeniería en Sistemas Computacionales. Apasionado por el desarrollo web y las tecnologías emergentes. Responsable del diseño de la interfaz del sitio.
+          </p>
+        </div>
+      </article>
+
+      <article class="miembro-card">
+
+        <img
+          src="fotos/juan.jpg"
+          alt="Foto de Juan Pitti"
+          class="miembro-foto"
+        />
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Juan Pitti</h3>
+          <div class="divider"></div>
+          <p class="miembro-desc">
+            Estudiante de Ingeniería en Sistemas Computacionales. Interesado en el diseño UX/UI y la experiencia de usuario. Encargado del contenido editorial del sitio.
+          </p>
+        </div>
+      </article>
+
+      <article class="miembro-card">
+      
+        <img
+          src="fotos/jonathan.jpg"
+          alt="Foto de Jonathan Quintero"
+          class="miembro-foto"
+        />
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Jonathan Quintero</h3>
+          <div class="divider"></div>
+          <p class="miembro-desc">
+            Estudiante de Ingeniería en Sistemas Computacionales. Especializado en programación backend. Responsable de la estructura HTML y la hoja de estilos del proyecto.
+          </p>
+        </div>
+      </article>
+
+      <article class="miembro-card">
+        
+        <img
+          src="fotos/eric.jpg"
+          alt="Foto de Eric Solis"
+          class="miembro-foto"
+        />
+        <div class="miembro-info">
+          <h3 class="miembro-nombre">Eric Solis</h3>
+          <div class="divider"></div>
+          <p class="miembro-desc">
+            Estudiante de Ingeniería en Sistemas Computacionales. Con experiencia en diseño gráfico y multimedia. Responsable del logo, wireframe y recursos visuales del sitio.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <section class="contact-form-section">
+      <h3>Envíanos un mensaje</h3>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" />
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" />
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+      </div>
+      <button class="btn-enviar" type="button" id="btn-enviar" onclick="enviarMensaje()">Enviar mensaje</button>
+
+      <div id="aviso-exito" class="aviso-form aviso-exito" style="display:none;">
+        Mensaje enviado correctamente. Revisa tu bandeja de entrada.
+      </div>
+      <div id="aviso-error" class="aviso-form aviso-error" style="display:none;">
+        No se pudo enviar el mensaje. Por favor intenta de nuevo.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-label">Otras secciones</p>
+      <ul class="footer-nav">
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Noticias SA Nacional. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="btn-top" onclick="irArriba()">&#8593; Arriba</button>
+
+  <script>
+    function enviarMensaje() {
+      var nombre = document.getElementById("nombre").value;
+      var correo = document.getElementById("correo").value;
+      var mensaje = document.getElementById("mensaje").value;
+
+      if (nombre == "" || correo == "" || mensaje == "") {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return;
+      }
+
+      var btn = document.getElementById("btn-enviar");
+      btn.textContent = "Enviando...";
+      btn.disabled = true;
+
+      // Reemplaza "TU_SERVICE_ID" y "TU_TEMPLATE_ID" con los valores de tu cuenta EmailJS
+      emailjs.send("service_r5bkw5y", "template_1iks49a", {
+        from_name: nombre,
+        from_email: correo,
+        message: mensaje
+      }).then(function() {
+        document.getElementById("aviso-exito").style.display = "block";
+        document.getElementById("aviso-error").style.display = "none";
+        document.getElementById("nombre").value = "";
+        document.getElementById("correo").value = "";
+        document.getElementById("mensaje").value = "";
+        btn.textContent = "Enviar mensaje";
+        btn.disabled = false;
+      }, function(error) {
+        document.getElementById("aviso-error").style.display = "block";
+        document.getElementById("aviso-exito").style.display = "none";
+        btn.textContent = "Enviar mensaje";
+        btn.disabled = false;
+      });
+    }
+
+    function irArriba() {
+      window.scrollTo(0, 0);
+    }
+
+    window.onscroll = function() {
+      var btn = document.getElementById("btn-top");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>

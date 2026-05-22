@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internacionales | Noticias SA Nacional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-internacionales">
+
+  <header class="site-header">
+    <div class="banner">
+      <div class="logo-area">
+        <div class="logo">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="26" fill="#B91C1C"/>
+            <text x="26" y="33" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="white">N</text>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">Noticias SA</span>
+            <span class="logo-sub">NACIONAL</span>
+          </div>
+        </div>
+        <p class="tagline">Tu fuente de información, hoy y siempre.</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html" class="active">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="section-heading">Noticias Internacionales</h2>
+    <p id="contador" class="info-line"></p>
+
+    <div class="intl-grid">
+
+      <article class="intl-card">
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80"
+          alt="Cumbre climática internacional"
+          class="intl-img"
+        />
+        <div class="intl-body">
+          <h3 class="intl-titulo">Líderes mundiales acuerdan nuevo pacto climático en cumbre de la ONU</h3>
+          <div class="intl-source-line">
+            <span class="intl-source-label">Fuente:</span>
+            <a href="https://www.bbc.com/mundo" class="intl-link" target="_blank" rel="noopener">BBC Mundo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="intl-card">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+          alt="Avances en inteligencia artificial"
+          class="intl-img"
+        />
+        <div class="intl-body">
+          <h3 class="intl-titulo">La inteligencia artificial transforma la industria tecnológica global</h3>
+          <div class="intl-source-line">
+            <span class="intl-source-label">Fuente:</span>
+            <a href="https://www.reuters.com/es/" class="intl-link" target="_blank" rel="noopener">Reuters Español</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="intl-card">
+        <img
+          src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80"
+          alt="Mercados financieros internacionales"
+          class="intl-img"
+        />
+        <div class="intl-body">
+          <h3 class="intl-titulo">Mercados globales reaccionan ante nuevas políticas económicas del G7</h3>
+          <div class="intl-source-line">
+            <span class="intl-source-label">Fuente:</span>
+            <a href="https://cnnespanol.cnn.com/" class="intl-link" target="_blank" rel="noopener">CNN en Español</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-label">Otras secciones</p>
+      <ul class="footer-nav">
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="deportivas.html">Deportivas</a></li>
+        <li><a href="internacionales.html">Internacionales</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Noticias SA Nacional. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="btn-top" onclick="irArriba()">&#8593; Arriba</button>
+
+  <script>
+    function irArriba() {
+      window.scrollTo(0, 0);
+    }
+
+    window.onscroll = function() {
+      var btn = document.getElementById("btn-top");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    window.onload = function() {
+      var noticias = document.querySelectorAll(".intl-card");
+      document.getElementById("contador").textContent = noticias.length + " noticias internacionales";
+    };
+  </script>
+
+</body>
+</html>
