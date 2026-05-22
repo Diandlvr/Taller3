@@ -171,7 +171,9 @@
       emailjs.send("service_r5bkw5y", "template_1iks49a", {
         from_name: nombre,
         from_email: correo,
-        message: mensaje
+        to_email: correo,
+        message: mensaje,
+        reply_to: correo
       }).then(function() {
         document.getElementById("aviso-exito").style.display = "block";
         document.getElementById("aviso-error").style.display = "none";
@@ -181,6 +183,7 @@
         btn.textContent = "Enviar mensaje";
         btn.disabled = false;
       }, function(error) {
+        console.log("EmailJS error:", JSON.stringify(error));
         document.getElementById("aviso-error").style.display = "block";
         document.getElementById("aviso-exito").style.display = "none";
         btn.textContent = "Enviar mensaje";
