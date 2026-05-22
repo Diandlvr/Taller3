@@ -1,0 +1,598 @@
+/* ================================================
+   Noticias SA Nacional — Estilos Globales
+   styles.css
+   ================================================ */
+
+/* === Variables === */
+:root {
+  --rojo-canal: #B91C1C;
+  --rojo-oscuro: #7F1D1D;
+  --rojo-claro: #FEE2E2;
+  --dorado: #D97706;
+  --fondo-pagina: #FDF6EC;
+  --fondo-banner: #1C0A00;
+  --texto-principal: #1C1917;
+  --texto-secundario: #57534E;
+  --texto-tenue: #A8A29E;
+  --borde: #E7E5E4;
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'Source Serif 4', Georgia, serif;
+  --fuente-ui: 'DM Sans', sans-serif;
+}
+
+/* === Reset básico === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fondo-pagina);
+  color: var(--texto-principal);
+  font-family: var(--fuente-cuerpo);
+  font-size: 17px;
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================================================
+   HEADER — Banner y Logo
+   ================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.banner {
+  background-color: var(--fondo-banner);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(185,28,28,0.08) 0px,
+    rgba(185,28,28,0.08) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 3px solid var(--rojo-canal);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-title {
+  font-family: var(--fuente-titulo);
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-family: var(--fuente-ui);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--dorado);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-family: var(--fuente-cuerpo);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  border-left: 2px solid var(--rojo-canal);
+  padding-left: 1rem;
+}
+
+/* ================================================
+   NAVEGACIÓN PRINCIPAL
+   ================================================ */
+.main-nav {
+  background-color: var(--rojo-canal);
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0;
+  margin: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.65rem 1.3rem;
+  font-family: var(--fuente-ui);
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--rojo-oscuro);
+  color: #FFFFFF;
+}
+
+/* ================================================
+   CONTENIDO PRINCIPAL
+   ================================================ */
+.main-content {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-heading {
+  font-family: var(--fuente-titulo);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--rojo-canal);
+  border-bottom: 2px solid var(--rojo-canal);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ================================================
+   ARTÍCULOS / NOTICIAS (home.html)
+   ================================================ */
+.noticia {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.noticia:last-child {
+  border-bottom: none;
+}
+
+.noticia-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--texto-principal);
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+}
+
+.noticia-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1.1rem;
+  border: 1px solid var(--borde);
+}
+
+.noticia-texto {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.05rem;
+  color: var(--texto-secundario);
+  line-height: 1.8;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.site-footer {
+  background-color: #1C0A00;
+  border-top: 3px solid var(--rojo-canal);
+  padding: 2rem 2rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.footer-label {
+  font-family: var(--fuente-ui);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--dorado);
+  margin-bottom: 0.6rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+  font-family: var(--fuente-ui);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-copy {
+  font-family: var(--fuente-ui);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 0.5rem;
+}
+
+/* ================================================
+   FONDOS POR PÁGINA
+   ================================================ */
+body.page-deportivas      { background-color: #EAF3E8; }
+body.page-internacionales { background-color: #EEF2FB; }
+body.page-contactanos     { background-color: #F5EEF8; }
+
+/* ================================================
+   DEPORTIVAS — Videos
+   ================================================ */
+.videos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.video-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #111;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.video-info {
+  padding: 1.1rem 1.3rem 1.4rem;
+}
+
+.video-badge {
+  display: inline-block;
+  font-family: var(--fuente-ui);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--rojo-canal);
+  border: 1px solid var(--rojo-canal);
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin-bottom: 0.5rem;
+}
+
+.video-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--texto-principal);
+  margin-bottom: 0.65rem;
+}
+
+.video-desc {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.97rem;
+  color: var(--texto-secundario);
+  line-height: 1.75;
+}
+
+/* ================================================
+   INTERNACIONALES — Cards
+   ================================================ */
+.intl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.intl-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.intl-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.intl-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.intl-body {
+  padding: 1rem 1.1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.intl-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--texto-principal);
+  margin-bottom: 0.8rem;
+}
+
+.intl-source-line {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.intl-source-label {
+  font-family: var(--fuente-ui);
+  font-size: 0.72rem;
+  color: var(--texto-tenue);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.intl-link {
+  font-family: var(--fuente-ui);
+  font-size: 0.82rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--rojo-canal);
+}
+
+.intl-link:hover {
+  text-decoration: underline;
+}
+
+/* ================================================
+   CONTÁCTANOS — Equipo y Formulario
+   ================================================ */
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.miembro-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.miembro-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.miembro-foto {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.miembro-info {
+  padding: 1.1rem 1rem 1.4rem;
+}
+
+.miembro-nombre {
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  margin-bottom: 0.5rem;
+}
+
+.miembro-desc {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  line-height: 1.65;
+}
+
+.divider {
+  width: 36px;
+  height: 2px;
+  background: var(--rojo-canal);
+  margin: 0.6rem auto 0.7rem;
+}
+
+.contact-form-section {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--borde);
+}
+
+.contact-form-section h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--fuente-ui);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--texto-secundario);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.97rem;
+  color: var(--texto-principal);
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--rojo-canal);
+}
+
+.form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.btn-enviar {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: var(--rojo-canal);
+  color: #fff;
+  font-family: var(--fuente-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-enviar:hover {
+  background: var(--rojo-oscuro);
+}
+
+/* ================================================
+   UTILIDADES — Fecha, Leer más, Botón arriba
+   ================================================ */
+.info-line {
+  font-family: var(--fuente-ui);
+  font-size: 0.8rem;
+  color: var(--texto-tenue);
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.noticia-texto.truncado {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-leer {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--fuente-ui);
+  font-size: 0.85rem;
+  color: var(--rojo-canal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
+
+.btn-leer:hover {
+  text-decoration: underline;
+}
+
+#btn-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--rojo-canal);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.55rem 1rem;
+  font-family: var(--fuente-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: none;
+  z-index: 200;
+  transition: background 0.2s;
+}
+
+#btn-top:hover {
+  background: var(--rojo-oscuro);
+}
