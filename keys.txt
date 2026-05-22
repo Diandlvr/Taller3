@@ -1,3 +1,0 @@
-template id: template_1iks49a
-public key: wGrBzh5RZBrMWzGJJ
-service id: service_r5bkw5y
